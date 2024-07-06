@@ -1,49 +1,10 @@
 import './App.css'
-
+import Header from './components/header'
+import Services from './components/services'
 function App() {
   return (
     <>
-      <header className="relative w-full pt-[104px]">
-        <div className="relative w-[78%] mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-[50px]">
-            <span className="text-[#25A4AD] text-[22px] leading-normal capitalize">
-              {' '}
-              Payme{' '}
-            </span>
-            <ul className="flex items-center gap-[50px]">
-              <li className="text-[#313131] text-lg leading-normal capitalize">
-                Home
-              </li>
-              <li className="text-[#313131] text-lg leading-normal capitalize">
-                About
-              </li>
-              <li className="text-[#313131] text-lg leading-normal capitalize">
-                Testimonial
-              </li>
-              <li className="text-[#313131] text-lg leading-normal capitalize">
-                Contact
-              </li>
-            </ul>
-          </div>
-          <div className="flex items-center gap-7">
-            <span className="text-[#313131] text-lg leading-normal">
-              Sign in
-            </span>
-            <button className="border shadow-cta border-[#25A4AD] w-[152px] h-[58px] text-center text-[#25A4AD] text-lg leading-normal">
-              Sign up
-            </button>
-          </div>
-        </div>
-        <div className="w-[130.066px] h-[130.066px] border vorder-solid border-[#25A4AD] absolute top-0 -left-[110px] bg-transparent -rotate-[19.523deg]"></div>
-        <img
-          src="/assets/right-top-shape.png"
-          className="absolute top-0 right-0"
-        />
-        <img
-          src="/assets/orange-shape.png"
-          className="absolute bottom-[-49px] left-[38%] overflow-auto"
-        />
-      </header>
+      <Header />
       <main className="w-full mt-[14px]">
         <section className="relative w-full">
           <div className="relative flex items-center justify-end max-w-[81.45vw] mx-auto">
@@ -73,7 +34,24 @@ function App() {
             <img src="/assets/hero-img.png" />
           </div>
           <div className="absolute top-[32%] left-[44%] w-[29px] h-[29px] bg-[#D4CCC9]"></div>
+          <div className="absolute left-0 top-[35%] w-[37px] h-[68px] bg-[#D7FCFF] "></div>
+          <div className="absolute left-0 bottom-[16%] bg-[#D7FCFF]">
+            <img src="/assets/green-shape.png" alt="shape" />
+          </div>
+          <div className="absolute right-5 border-radius-shapre bottom-[21%] p-10 ">
+            <img src="/assets/grey-shape.png" alt="shape" />
+          </div>
+          <div className="absolute left-0 -bottom-[105px] w-full bg-[#F8F8F8] py-[75px] flex items-center justify-center ">
+            <div className="flex items-center justif gap-[100px]">
+              <img src="/assets/planday.svg" />
+              <img src="/assets/umbraco.svg" />
+              <img src="/assets/fisher.svg" />
+              <img src="/assets/bright.svg" />
+              <img src="/assets/plandayy.svg" />
+            </div>
+          </div>
         </section>
+        <Services />
       </main>
     </>
   )
