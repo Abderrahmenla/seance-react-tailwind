@@ -1,12 +1,13 @@
 import './App.css'
 import Header from './components/header'
 import Services from './components/services'
+import Features from './components/features'
 function App() {
   return (
     <>
       <Header />
-      <main className="w-full mt-[14px]">
-        <section className="relative w-full">
+      <main className="w-full mt-[14px] ">
+        <section className="relative w-full mb-[140px]">
           <div className="relative flex items-center justify-end max-w-[81.45vw] mx-auto">
             <div className="absolute top-[52%] left-[28%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col">
               <div className="flex flex-col mb-[30px] max-w-[623px] ">
@@ -52,6 +53,7 @@ function App() {
           </div>
         </section>
         <Services />
+        <Features />
       </main>
     </>
   )
