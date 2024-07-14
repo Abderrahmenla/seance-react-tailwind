@@ -1,30 +1,8 @@
 import React from 'react'
 import Title from './title'
 import ServiceCard from './service-card'
+import { serviceData } from '../data/service'
 export default function Services() {
-  const serviceData = [
-    {
-      title: 'Web Development',
-      layerClassName: 'left-top-dark-layer',
-      imgSrc: '/assets/left-top-card.png',
-    },
-    {
-      title: 'Web Development',
-      layerClassName: 'right-top-dark-layer',
-      imgSrc: '/assets/right-top-card.png',
-    },
-    {
-      title: 'Web Development',
-      layerClassName: 'left-bottom-dark-layer',
-      imgSrc: '/assets/bottom-left-card.png',
-    },
-
-    {
-      title: 'Web Development',
-      layerClassName: 'right-bottom-dark-layer',
-      imgSrc: '/assets/right-bottom-card.png',
-    },
-  ]
   return (
     <section className="relative flex items-center justify-center bg-white pt-[210px] pb-[140px]">
       <div className="flex flex-col items-center w-full gap-[80px]">
@@ -66,7 +44,7 @@ export default function Services() {
             />
           </div>
         </div>
-        <button className="flex items-center justify-center border border-[#25A4AD] text-center text-lg text-[#25A4AD] capitalize px-[65px] py-[18px]">
+        <button className="cursor-pointer flex items-center justify-center border border-[#25A4AD] text-center text-lg text-[#25A4AD] capitalize px-[65px] py-[18px]">
           explore All
         </button>
       </div>
