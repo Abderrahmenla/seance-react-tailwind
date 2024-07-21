@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel'
 import { cn } from '../utils'
 export default function Features() {
+  const [selectedCard, setSelectedCard] = useState(0)
   const cards = [
     {
       title: 'Work Load',
@@ -15,6 +16,21 @@ export default function Features() {
     },
     {
       title: 'Collaborations',
+      description:
+        'Outward clothes promise at gravity do excited. Sufficient particular impossible by reasonable oh expression is. Yet preference connection unpleasant yet melancholy but end appearance.',
+    },
+    {
+      title: 'Work Load',
+      description:
+        'Outward clothes promise at gravity do excited. Sufficient particular impossible by reasonable oh expression is. Yet preference connection unpleasant yet melancholy but end appearance.',
+    },
+    {
+      title: 'Work Load',
+      description:
+        'Outward clothes promise at gravity do excited. Sufficient particular impossible by reasonable oh expression is. Yet preference connection unpleasant yet melancholy but end appearance.',
+    },
+    {
+      title: 'Work Load',
       description:
         'Outward clothes promise at gravity do excited. Sufficient particular impossible by reasonable oh expression is. Yet preference connection unpleasant yet melancholy but end appearance.',
     },
@@ -39,28 +55,49 @@ export default function Features() {
           sensible sociable surprise screened no up as.
         </p>
       </div>
-      <div className="w-full">
-        <Carousel className="w-full">
-          <CarouselContent className="px-4">
-            {cards.map((option, index) => (
-              <CarouselItem key={index} className="pl-[10px] sm:pl-[16px]">
-                <div
-                  className={cn(
-                    'group relative flex h-[78px] w-[78px] cursor-pointer flex-col items-center justify-center gap-2 rounded-[10px] sm:h-[84px] sm:w-[84px]'
-                  )}
+      <Carousel className="w-full">
+        <CarouselContent className="px-4 gap-10">
+          {cards.map((option, index) => (
+            <CarouselItem
+              key={index}
+              className={`w-[350px] py-[38px] px-[33px] cursor-pointer ${
+                selectedCard === index
+                  ? 'bg-white shadow-card-selected'
+                  : 'bg-transparent border border-solid border-[#D8D8D8]'
+              } `}
+              onClick={() => setSelectedCard(index)}
+            >
+              <div
+                className={cn(
+                  'flex w-full flex-col items-center justify-center'
+                )}
+              >
+                <span
+                  className={`text-[22px] font-semibold capitalize leading-[27px] ${
+                    selectedCard === index ? 'text-[#25A4AD]' : 'text-[#313131]'
+                  } `}
                 >
-                  <span
-                    className={`text-sm capitalize  leading-[21px] sm:text-base sm:leading-6`}
-                  >
-                    {option.title}
-                  </span>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-      </div>
-      <div></div>
+                  {option.title}
+                </span>
+                <p className="mt-[25px] mb-[49px] text-center text-base text-[#313131] leading-[23px]">
+                  {option.description}
+                </p>
+                <a
+                  className={`text-base font-medium leading-[19px]  underline ${
+                    selectedCard === index ? 'text-[#25A4AD]' : 'text-[#313131]'
+                  } `}
+                >
+                  Learn More
+                </a>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+
+      <button className="w-[215px] py-[18px] filter-drop-btn border border-solid border-[#25A4AD] text-lg leading-[22px] font-medium text-[#25A4AD]">
+        Explore All
+      </button>
     </div>
   )
 }
