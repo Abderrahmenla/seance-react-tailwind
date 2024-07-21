@@ -46,7 +46,7 @@ export default function Features() {
         <h2 className="text-[#313131] text-[65px] leading-[65px] text-center">
           {' '}
           Our{' '}
-          <span className="text-[#25A4AD] leading-[65px] text-[65px] ">
+          <span className="text-[#25A4AD] font-semibold leading-[65px] text-[65px] ">
             Features{' '}
           </span>{' '}
         </h2>

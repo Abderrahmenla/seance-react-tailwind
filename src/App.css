@@ -137,3 +137,12 @@ code {
     drop-shadow(0px 64.815px 46.852px rgba(49, 49, 49, 0.08))
     drop-shadow(0px 100px 80px rgba(49, 49, 49, 0.1));
 }
+
+.border-bl {
+  border-radius: 0px 0px 236px 0px;
+}
+.pricing-shadow {
+  box-shadow: 0px 38.519px 25.481px 0px rgba(49, 49, 49, 0.06),
+    0px 20px 13px 0px rgba(49, 49, 49, 0.05),
+    0px 1.852px 3.148px 0px rgba(49, 49, 49, 0.02);
+}

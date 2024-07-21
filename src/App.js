@@ -2,6 +2,8 @@ import './App.css'
 import Header from './components/header'
 import Services from './components/services'
 import Features from './components/features'
+import Testimonials from './components/testimonials'
+import Pricing from './components/pricing'
 function App() {
   return (
     <>
@@ -54,11 +56,11 @@ function App() {
         </section>
         <Services />
         <Features />
+        <Testimonials />
+        <Pricing />
       </main>
     </>
   )
 }
 
 export default App
-
-// img h 79vh 34.7vw

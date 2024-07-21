@@ -126,16 +126,8 @@ const CarouselContent = React.forwardRef(({ className, ...props }, ref) => {
   const { carouselRef, orientation } = useCarousel()
 
   return (
-    <div ref={carouselRef} className="overflow-hidden">
-      <div
-        ref={ref}
-        className={cn(
-          'flex',
-          orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col',
-          className
-        )}
-        {...props}
-      />
+    <div ref={carouselRef} className="overflow-hidden w-full">
+      <div ref={ref} className={cn('flex', className)} {...props} />
     </div>
   )
 })
@@ -161,28 +153,24 @@ const CarouselItem = React.forwardRef(({ className, ...props }, ref) => {
 CarouselItem.displayName = 'CarouselItem'
 
 const CarouselPrevious = React.forwardRef(
-  ({ className, variant = 'outline', size = 'icon', ...props }, ref) => {
-    const { orientation, scrollPrev, canScrollPrev } = useCarousel()
+  ({ className, size = 'icon', ...props }, ref) => {
+    const { scrollPrev, canScrollPrev } = useCarousel()
 
     return (
-      <Button
+      <button
         ref={ref}
-        variant={variant}
         size={size}
         className={cn(
-          'absolute  h-8 w-8 rounded-full',
-          orientation === 'horizontal'
-            ? '-left-12 top-1/2 -translate-y-1/2'
-            : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
+          'py-2 px-3 rounded-full border border-[#25A4AD]',
           className
         )}
         disabled={!canScrollPrev}
         onClick={scrollPrev}
         {...props}
       >
-        <ArrowLeft className="h-4 w-4" />
+        <ArrowLeft className="h-4 w-4 " color="#25A4AD" />
         <span className="sr-only">Previous slide</span>
-      </Button>
+      </button>
     )
   }
 )
@@ -190,27 +178,23 @@ CarouselPrevious.displayName = 'CarouselPrevious'
 
 const CarouselNext = React.forwardRef(
   ({ className, variant = 'outline', size = 'icon', ...props }, ref) => {
-    const { orientation, scrollNext, canScrollNext } = useCarousel()
+    const { scrollNext, canScrollNext } = useCarousel()
 
     return (
-      <Button
+      <button
         ref={ref}
-        variant={variant}
         size={size}
         className={cn(
-          'absolute h-8 w-8 rounded-full',
-          orientation === 'horizontal'
-            ? '-right-12 top-1/2 -translate-y-1/2'
-            : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
+          'py-2 px-3 rounded-full border border-[#25A4AD]',
           className
         )}
         disabled={!canScrollNext}
         onClick={scrollNext}
         {...props}
       >
-        <ArrowRight className="h-4 w-4" />
+        <ArrowRight className="h-4 w-4" color="#25A4AD" />
         <span className="sr-only">Next slide</span>
-      </Button>
+      </button>
     )
   }
 )
