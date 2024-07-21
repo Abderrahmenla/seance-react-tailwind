@@ -127,7 +127,9 @@ export default function Pricing() {
           </button>
         </div>
       </div>
-      <div className="w-[523px] h-[650px] bg-[#F3F3F3] z-0 rotate-[64.766deg] absolute left-[-250px] top-[250px]"></div>
+      <div className=" w-[523px] h-[650px] bg-[#F3F3F3] z-0 rotate-[64.766deg] absolute left-[-250px] top-[250px]"></div>
     </div>
   )
 }
+
+// branch fix
