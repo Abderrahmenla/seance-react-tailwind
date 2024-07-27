@@ -4,6 +4,7 @@ import Services from './components/services'
 import Features from './components/features'
 import Testimonials from './components/testimonials'
 import Pricing from './components/pricing'
+import Footer from './components/footer'
 function App() {
   return (
     <>
@@ -59,6 +60,7 @@ function App() {
         <Testimonials />
         <Pricing />
       </main>
+      <Footer />
     </>
   )
 }

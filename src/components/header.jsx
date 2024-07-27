@@ -25,7 +25,9 @@ export default function Header() {
           </ul>
         </div>
         <div className="flex items-center gap-7">
-          <span className="text-[#313131] text-lg leading-normal">Sign in</span>
+          <button className="text-[#313131] text-lg leading-normal cursor-pointer">
+            Sign in
+          </button>
           <button className="border shadow-cta border-[#25A4AD] w-[152px] h-[58px] text-center text-[#25A4AD] text-lg leading-normal">
             Sign up
           </button>
