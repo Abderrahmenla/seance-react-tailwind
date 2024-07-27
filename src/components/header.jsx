@@ -10,16 +10,16 @@ export default function Header() {
             Payme{' '}
           </span>
           <ul className="flex items-center gap-[50px]">
-            <li className="text-[#313131] text-lg leading-normal capitalize">
+            <li className="text-[#313131] text-lg leading-normal capitalize cursor-pointer">
               Home
             </li>
-            <li className="text-[#313131] text-lg leading-normal capitalize">
+            <li className="text-[#313131] text-lg leading-normal capitalize cursor-pointer">
               About
             </li>
-            <li className="text-[#313131] text-lg leading-normal capitalize">
+            <li className="text-[#313131] text-lg leading-normal capitalize cursor-pointer">
               Testimonial
             </li>
-            <li className="text-[#313131] text-lg leading-normal capitalize">
+            <li className="text-[#313131] text-lg leading-normal capitalize cursor-pointer">
               Contact
             </li>
           </ul>
