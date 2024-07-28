@@ -5,6 +5,7 @@ import Features from './components/features'
 import Testimonials from './components/testimonials'
 import Pricing from './components/pricing'
 import Footer from './components/footer'
+import Contact from './components/contact'
 function App() {
   return (
     <>
@@ -59,6 +60,7 @@ function App() {
         <Features />
         <Testimonials />
         <Pricing />
+        <Contact />
       </main>
       <Footer />
     </>

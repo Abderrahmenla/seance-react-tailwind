@@ -6,7 +6,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from './ui/carousel'
-import { cn } from '../utils'
 export default function Testimonials() {
   const testimonials = [
     {
