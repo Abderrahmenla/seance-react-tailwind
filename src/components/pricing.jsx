@@ -2,15 +2,12 @@ import React from 'react'
 import FAQ from './faq'
 export default function Pricing() {
   return (
-    <div className="relative pb-[140px] bg-white flex flex-col items-center gap-20 overflow-hidden">
-      <h2 className="text-[#313131] text-[65px] leading-[65px] text-center">
-        Our{' '}
-        <span className="text-[#25A4AD] font-semibold leading-[65px] text-[65px] ">
-          Pricing Plan
-        </span>{' '}
+    <div className="relative pb-[140px] bg-white flex flex-col items-center gap-5 lg:gap-20 overflow-hidden">
+      <h2 className="text-[#313131] text-3xl lg:text-[65px] leading-[65px] text-center">
+        Our <span className="text-[#25A4AD] font-semibold ">Pricing Plan</span>{' '}
       </h2>
-      <div className="flex items-stretch gap-[42px] mb-[80px]">
-        <div className="relative !z-20 bg-white w-[362px] py-[50px] px-[42px] flex flex-col items-center border border-solid border-[#D8D8D8] mt-10">
+      <div className="flex flex-col sm:flex-row items-stretch gap-[42px] mb-[80px]">
+        <div className="relative !z-20 bg-white w-[362px] py-[50px] px-[42px] flex flex-col items-center border border-solid border-[#D8D8D8] sm:mt-10">
           <span className="mb-[17px] text-[#313131] leading-[30px] text-[30px]">
             For Starter
           </span>
@@ -96,7 +93,7 @@ export default function Pricing() {
             Request Demo
           </button>
         </div>
-        <div className="w-[362px] py-[50px] px-[42px] flex flex-col items-center border border-solid border-[#D8D8D8] flex-grow mt-10">
+        <div className="w-[362px] py-[50px] px-[42px] flex flex-col items-center border border-solid border-[#D8D8D8] flex-grow sm:mt-10">
           <span className="mb-[36px] text-[#313131] leading-[30px] text-[30px]">
             For Company
           </span>
@@ -129,7 +126,7 @@ export default function Pricing() {
         </div>
       </div>
       <FAQ />
-      <div className=" w-[523px] h-[650px] bg-[#F3F3F3] z-0 rotate-[64.766deg] absolute left-[-250px] top-[250px]"></div>
+      <div className="hidden sm:block w-[523px] h-[650px] bg-[#F3F3F3] z-0 rotate-[64.766deg] absolute left-[-250px] top-[250px]"></div>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import Contact from './pages/contact'
 import About from './pages/about'
 import NotFound from './pages/not-found'
 import Signup from './pages/sign-up'
+import FAQ from './pages/faq'
 function App() {
   return (
     <React.Suspense fallback={null}>
@@ -28,6 +29,11 @@ function App() {
             path={`${process.env.PUBLIC_URL + '/signup'}`}
             element={<Signup />}
           />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/faq'}`}
+            element={<FAQ />}
+          />
+
           <Route exact path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

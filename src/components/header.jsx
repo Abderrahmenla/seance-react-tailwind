@@ -1,6 +1,10 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom'
 export default function Header() {
+  const navigate = useNavigate()
+  const handleSignUp = () => {
+    navigate('/signup')
+  }
   return (
     <header className="relative w-full pt-[104px]">
       <div className="relative w-[78%] mx-auto flex items-center justify-between">
@@ -28,7 +32,10 @@ export default function Header() {
           <button className="text-[#313131] text-lg leading-normal cursor-pointer">
             Sign in
           </button>
-          <button className="border shadow-cta border-[#25A4AD] w-[152px] h-[58px] text-center text-[#25A4AD] text-lg leading-normal">
+          <button
+            onClick={handleSignUp}
+            className="border shadow-cta border-[#25A4AD] w-[152px] h-[58px] text-center text-[#25A4AD] text-lg leading-normal"
+          >
             Sign up
           </button>
         </div>

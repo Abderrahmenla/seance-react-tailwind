@@ -1,26 +1,28 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app'
-import { getAuth } from 'firebase/auth'
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyA1yu1Q0YaCJrnxUQKqAY2E5Ec4B_z-U6Q',
+  apiKey: 'AIzaSyCnLHgr0iKdXPfSOoBJJb4WeuLjnTkMWGs',
 
-  authDomain: 'seance-react.firebaseapp.com',
+  authDomain: 'fir-react-tailwind-2bfd6.firebaseapp.com',
 
-  projectId: 'seance-react',
+  projectId: 'fir-react-tailwind-2bfd6',
 
-  storageBucket: 'seance-react.appspot.com',
+  storageBucket: 'fir-react-tailwind-2bfd6.appspot.com',
 
-  messagingSenderId: '341764290051',
+  messagingSenderId: '809739797656',
 
-  appId: '1:341764290051:web:3edda27eff59245d680036',
+  appId: '1:809739797656:web:2e387a247a3db393573ced',
 }
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
+const provider = new GoogleAuthProvider()
 
 export const auth = getAuth(app)
+export const signInWithGooglePopup = () => signInWithPopup(auth, provider)
 export default app

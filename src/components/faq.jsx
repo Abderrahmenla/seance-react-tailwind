@@ -32,7 +32,7 @@ export default function FAQ() {
   ]
   return (
     <div className="flex flex-col items-center gap-20">
-      <h2 className="text-[#25A4AD] font-semibold leading-[65px] text-[65px] text-center">
+      <h2 className="text-[#25A4AD] font-semibold leading-[65px] text-3xl lg:text-[65px] text-center">
         FAQs
       </h2>
       <div>
@@ -41,12 +41,12 @@ export default function FAQ() {
             <AccordionItem key={index} value={`question-${index + 1}`}>
               <div className="faq-shadow">
                 <AccordionTrigger className="h-[100px] flex items-center  text-left !text-xl md:!text-2xl pl-10 rounded-[10px]">
-                  <span className="max-w-[530px] text-[#313131] text-xl font-medium">
+                  <span className="max-w-[320px] sm:max-w-[530px] text-[#313131] text-xl font-medium">
                     {item.question}{' '}
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="bg-white pb-8 pl-10 rounded-b-[10px]">
-                  <p className="max-w-[490px] text-[#313131] leading-6 text-base">
+                  <p className="max-w-[320px] sm:max-w-[490px] text-[#313131] leading-6 text-base">
                     {item.answer}{' '}
                   </p>
                 </AccordionContent>
