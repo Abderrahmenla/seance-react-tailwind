@@ -5,6 +5,9 @@ export default function Header() {
   const handleSignUp = () => {
     navigate('/signup')
   }
+  const handleSignIn = () => {
+    navigate('/signin')
+  }
   return (
     <header className="relative w-full pt-[104px]">
       <div className="relative w-[78%] mx-auto flex items-center justify-between">
@@ -29,7 +32,10 @@ export default function Header() {
           </ul>
         </div>
         <div className="flex items-center gap-7">
-          <button className="text-[#313131] text-lg leading-normal cursor-pointer">
+          <button
+            onClick={handleSignIn}
+            className="text-[#313131] text-lg leading-normal cursor-pointer"
+          >
             Sign in
           </button>
           <button

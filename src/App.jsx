@@ -7,6 +7,9 @@ import About from './pages/about'
 import NotFound from './pages/not-found'
 import Signup from './pages/sign-up'
 import FAQ from './pages/faq'
+import Signin from './pages/sing-in'
+import Dashboard from './pages/dashboard'
+import PrivateRoute from './private-route'
 function App() {
   return (
     <React.Suspense fallback={null}>
@@ -28,6 +31,18 @@ function App() {
           <Route
             path={`${process.env.PUBLIC_URL + '/signup'}`}
             element={<Signup />}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/signin'}`}
+            element={<Signin />}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/dashboard'}`}
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
           />
           <Route
             path={`${process.env.PUBLIC_URL + '/faq'}`}
