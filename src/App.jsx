@@ -9,7 +9,7 @@ import Signup from './pages/sign-up'
 import FAQ from './pages/faq'
 import Signin from './pages/sing-in'
 import Dashboard from './pages/dashboard'
-import PrivateRoute from './private-route'
+import PrivateRoutesLayout from './layouts'
 function App() {
   return (
     <React.Suspense fallback={null}>
@@ -37,19 +37,17 @@ function App() {
             element={<Signin />}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + '/dashboard'}`}
-            element={
-              <PrivateRoute>
-                <Dashboard />
-              </PrivateRoute>
-            }
-          />
-          <Route
             path={`${process.env.PUBLIC_URL + '/faq'}`}
             element={<FAQ />}
           />
-
           <Route exact path="*" element={<NotFound />} />
+          {/* private routes */}
+          <Route element={<PrivateRoutesLayout />}>
+            <Route
+              path={`${process.env.PUBLIC_URL + '/dashboard'}`}
+              element={<Dashboard />}
+            />
+          </Route>
         </Routes>
       </BrowserRouter>
     </React.Suspense>

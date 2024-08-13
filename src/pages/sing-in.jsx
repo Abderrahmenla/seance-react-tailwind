@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { signInWithEmailAndPassword } from 'firebase/auth'
-import { auth, signInWithGooglePopup } from '../provider/firebase'
-
+import { signInWithGooglePopup } from '../providers/firebase'
+import { login } from '../providers/firebase'
 const Signin = () => {
   const navigate = useNavigate()
 
@@ -12,13 +11,8 @@ const Signin = () => {
   const onSubmit = async (e) => {
     e.preventDefault()
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      )
-      const user = userCredential.user
-      navigate('/dashboard')
+      const userCredential = await login(email, password)
+      if (userCredential) navigate('/dashboard')
     } catch (error) {
       const errorCode = error.code
       const errorMessage = error.message
