@@ -9,7 +9,7 @@ import Contact from '../components/contact'
 export default function Home() {
   return (
     <>
-      <Header />
+      <Header landing={true} />
       <main className="w-full mt-[14px] ">
         <section className="relative w-full mb-[140px]">
           <div className="relative flex items-center justify-end max-w-[81.45vw] mx-auto">

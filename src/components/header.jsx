@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-export default function Header() {
+import { Link } from 'react-router-dom'
+export default function Header({ landing = false }) {
   const navigate = useNavigate()
   const handleSignUp = () => {
     navigate('/signup')
@@ -17,18 +18,26 @@ export default function Header() {
             Payme{' '}
           </span>
           <ul className="flex items-center gap-[50px]">
-            <li className="text-[#313131] text-lg leading-normal capitalize cursor-pointer">
-              Home
-            </li>
-            <li className="text-[#313131] text-lg leading-normal capitalize cursor-pointer">
-              About
-            </li>
-            <li className="text-[#313131] text-lg leading-normal capitalize cursor-pointer">
-              Testimonial
-            </li>
-            <li className="text-[#313131] text-lg leading-normal capitalize cursor-pointer">
-              Contact
-            </li>
+            <Link to={'/'}>
+              <li className="text-[#313131] text-lg leading-normal capitalize cursor-pointer">
+                Home
+              </li>
+            </Link>
+            <Link to={'/about'}>
+              <li className="text-[#313131] text-lg leading-normal capitalize cursor-pointer">
+                About
+              </li>
+            </Link>
+            <Link to={'/blog'}>
+              <li className="text-[#313131] text-lg leading-normal capitalize cursor-pointer">
+                Blog
+              </li>
+            </Link>
+            <Link to={'/contact'}>
+              <li className="text-[#313131] text-lg leading-normal capitalize cursor-pointer">
+                Contact
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="flex items-center gap-7">
@@ -53,7 +62,9 @@ export default function Header() {
       />
       <img
         src="/assets/orange-shape.png"
-        className="absolute bottom-[-49px] left-[38%] overflow-auto"
+        className={`absolute bottom-[-49px] left-[38%] overflow-auto ${
+          landing ? '' : 'hidden'
+        } `}
       />
     </header>
   )

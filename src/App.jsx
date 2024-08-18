@@ -8,6 +8,7 @@ import NotFound from './pages/not-found'
 import Signup from './pages/sign-up'
 import FAQ from './pages/faq'
 import Signin from './pages/sing-in'
+import Blog from './pages/blog'
 import Dashboard from './pages/dashboard'
 import PrivateRoutesLayout from './layouts'
 function App() {
@@ -39,6 +40,10 @@ function App() {
           <Route
             path={`${process.env.PUBLIC_URL + '/faq'}`}
             element={<FAQ />}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/blog'}`}
+            element={<Blog />}
           />
           <Route exact path="*" element={<NotFound />} />
           {/* private routes */}
