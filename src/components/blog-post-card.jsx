@@ -9,6 +9,14 @@ export default function BlogPostCard({
   creationDate,
   timeToRead,
 }) {
+  const date = new Date(creationDate)
+
+  // Step 2: Format the date to "28 Septembre 2023"
+  const formattedDate = date.toLocaleDateString('fr-FR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
   return (
     <div className="transition-all duration-150 flex w-full">
       <div className="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
@@ -114,11 +122,15 @@ export default function BlogPostCard({
                   {author}
                 </a>
                 <span className="mx-1 text-xs text-gray-600">
-                  {creationDate}{' '}
+                  {formattedDate}{' '}
                 </span>
               </div>
             </div>
-            <p className="mt-1 text-xs text-gray-600">{timeToRead} read</p>
+            {timeToRead && (
+              <p className="mt-1 text-xs text-gray-600">
+                {timeToRead?.toString()} minutes read
+              </p>
+            )}
           </div>
         </section>
       </div>

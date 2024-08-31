@@ -1,9 +1,53 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { popularNews, latestNews } from '../data/blog'
 import BlogPostCard from '../components/blog-post-card'
 import Footer from '../components/footer'
 import Header from '../components/header'
 export default function Blog() {
+  const [fetchedData, setFetchedData] = useState(null)
+  const query = `
+  {
+    blogPostPageCollection{
+      items{
+        title
+        description{
+          json
+        }
+        category
+        author
+        creationDate
+        blogImage{
+          url
+        }
+        timeToRead
+      }
+    }
+  }
+`
+  useEffect(() => {
+    window
+      .fetch(
+        `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}/`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            // Authenticate the request
+            Authorization: `Bearer ${process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN}`,
+          },
+          // send the GraphQL query
+          body: JSON.stringify({ query }),
+        }
+      )
+      .then((response) => response.json())
+      .then(({ data, errors }) => {
+        if (errors) {
+          console.error(errors)
+        }
+
+        setFetchedData(data?.blogPostPageCollection?.items)
+      })
+  }, [])
   return (
     <>
       <Header />
@@ -185,18 +229,21 @@ export default function Blog() {
             </a>
           </div>
           <div class="flex items-center gap-6 flex-col lg:flex-row">
-            {popularNews.map((blog, index) => (
-              <BlogPostCard
-                key={index}
-                title={blog.title}
-                description={blog.description}
-                bgCoverUrl={blog.bgCoverUrl}
-                category={blog.category}
-                author={blog.author}
-                creationDate={blog.creationDate}
-                timeToRead={blog.timeToRead}
-              />
-            ))}
+            {fetchedData &&
+              fetchedData?.map((blog, index) => (
+                <BlogPostCard
+                  key={index}
+                  title={blog.title}
+                  description={
+                    blog.description.json.content[0].content[0].value
+                  }
+                  bgCoverUrl={blog.blogImage.url}
+                  category={blog.category}
+                  author={blog.author}
+                  creationDate={blog.creationDate}
+                  timeToRead={blog.timeToRead}
+                />
+              ))}
           </div>
         </div>
       </main>
