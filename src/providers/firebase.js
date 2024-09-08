@@ -40,7 +40,7 @@ export const login = async (email, password) => {
     return res
   } catch (err) {
     // Affichage de l'erreur dans la console
-    console.log(err.message)
+    console.error(err.message)
   }
 }
 
@@ -67,8 +67,6 @@ export const signUp = async (email, password) => {
       throw new Error('Une erreur est survenue, réessayez !')
     }
 
-    // Affichage des informations de l'utilisateur inscrit
-    console.log(res.user)
     return res
   } catch (err) {
     // Affichage de l'erreur dans la console

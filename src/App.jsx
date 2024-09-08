@@ -11,6 +11,8 @@ import Signin from './pages/sing-in'
 import Blog from './pages/blog'
 import Dashboard from './pages/dashboard'
 import PrivateRoutesLayout from './layouts'
+import BlogDetail from './pages/blog-detail'
+import ReactState from './pages/react-state'
 function App() {
   return (
     <React.Suspense fallback={null}>
@@ -45,6 +47,15 @@ function App() {
             path={`${process.env.PUBLIC_URL + '/blog'}`}
             element={<Blog />}
           />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/blog-detail'}`}
+            element={<BlogDetail />}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/react-state'}`}
+            element={<ReactState />}
+          />
+
           <Route exact path="*" element={<NotFound />} />
           {/* private routes */}
           <Route element={<PrivateRoutesLayout />}>

@@ -13,7 +13,6 @@ const Signup = () => {
     try {
       const userCredential = await signUp(email, password)
       const user = userCredential.user
-      console.log("Voici l'utilisateur cree ", user)
       navigate('/signin')
     } catch (error) {
       const errorCode = error.code
