@@ -11,6 +11,7 @@ import {
   handleUserNameChange,
   handlePhoneNumberChange,
 } from '../store/child'
+import ReduxChild from './redux-child'
 
 export default function Child() {
   const { counter, add, substract } = useContext(CountContext)
@@ -37,7 +38,7 @@ export default function Child() {
         </button>
       </div>
       <ChildChild />
-
+      <ReduxChild />
       <section className="flex flex-col gap-4 mt-10 px-10">
         <div className="flex items-center gap-2 justify-start">
           <span>Name :</span>

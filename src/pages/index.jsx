@@ -6,6 +6,7 @@ import Testimonials from '../components/testimonials'
 import Pricing from '../components/pricing'
 import Footer from '../components/footer'
 import Contact from '../components/contact'
+
 export default function Home() {
   return (
     <>
