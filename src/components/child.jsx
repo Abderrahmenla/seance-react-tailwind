@@ -12,7 +12,7 @@ import {
   handlePhoneNumberChange,
 } from '../store/child'
 import ReduxChild from './redux-child'
-
+import TanStackChild from './tanstack-child'
 export default function Child() {
   const { counter, add, substract } = useContext(CountContext)
   const [filters, dispatch] = useReducer(filterReducer, initialState)
@@ -39,6 +39,7 @@ export default function Child() {
       </div>
       <ChildChild />
       <ReduxChild />
+      <TanStackChild />
       <section className="flex flex-col gap-4 mt-10 px-10">
         <div className="flex items-center gap-2 justify-start">
           <span>Name :</span>
